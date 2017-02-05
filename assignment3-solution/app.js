@@ -5,14 +5,15 @@
   .controller('NarrowItDownController', NarrowItDownController)
   .service('MenuSearchService', MenuSearchService)
   .directive('foundItems', FoundItems)
-  .constant('ApiBasePath', "https://davids-restaurant.herokuapp.com");
+  .constant('URL', "https://davids-restaurant.herokuapp.com/menu_items.json");
 
   function FoundItems() {
     var ddo = {
-      templateUrl: 'foundList.html',
+      templateUrl: 'foundItems.html',
       scope: {
         found: '<',
-        onRemove: '&'
+        onRemove: '&',
+        error: '<'
       },
       controller: NarrowItDownController,
       controllerAs: 'narrowSearch',
@@ -27,8 +28,9 @@
     var narrowSearch = this;
 
     narrowSearch.searchTerm = "";
-
     narrowSearch.found = MenuSearchService.getFoundItems();
+    //narrowSearch.found = [];
+    narrowSearch.error = false;
 
     narrowSearch.checkFoundItems = function () {
       return MenuSearchService.checkFoundItems();
@@ -44,14 +46,27 @@
         MenuSearchService.getMatchedMenuItems(menuItems, narrowSearch.searchTerm);
       })
     };
+    // menu.narrowItDown = function() {
+    //     menu.found = []
+    //     if (menu.searchTerm) {
+    //         var resultPromise = MenuSearchService.getMatchedMenuItems(menu.searchTerm);
+    //         resultPromise.then(function(items) {
+    //             menu.found = items;
+    //         });
+    //     } else {
+    //         menu.showError();
+    //
+    //     }
+    //
+    // };
 
     narrowSearch.removeItem = function (itemIndex) {
       MenuSearchService.removeItem(itemIndex);
     }
   }
 
-  MenuSearchService.$inject = ['$http', 'ApiBasePath'];
-  function MenuSearchService($http, ApiBasePath) {
+  MenuSearchService.$inject = ['$http', 'URL'];
+  function MenuSearchService($http, URL) {
     var service = this;
 
     var found = [];
@@ -61,7 +76,7 @@
     service.getMenuItems = function () {
       var response = $http({
         method: "GET",
-        url: (ApiBasePath + "/menu_items.json")
+        url: (URL)
       });
 
       return response;
@@ -86,6 +101,7 @@
         isFound = true;
       }
       console.log("Found items: ", found);
+      //return found;
     }
 
     service.removeItem = function (itemIndex) {

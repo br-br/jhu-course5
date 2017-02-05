@@ -5,6 +5,31 @@ input[type="text"] {
   width: 200px;
   float: left;
 }
+.foundItems {
+  clear: both;
+}
+table.foundItems  {
+  color: teal;
+}
+li {
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+}
+.liheader {
+  font-size: 2.2rem;
+  color: teal;
+  font-weight: bold;
+}
+ul {
+  clear: both;
+  list-style-type: none;
+}
+.error {
+  color: red;
+  font-weight: bold;
+  font-size: 2.5rem;
+  clear: both;
+}
 .narrow-button {
   float: left;
   margin-left: 10px;
