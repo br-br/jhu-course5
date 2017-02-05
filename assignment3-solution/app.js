@@ -56,7 +56,7 @@
 
     var found = [];
 
-    var haveItem = true;
+    var isFound = true;
 
     service.getMenuItems = function () {
       var response = $http({
@@ -81,9 +81,9 @@
         }
       }
       if (found.length == 0) {
-        haveItem = false;
+        isFound = false;
       } else {
-        haveItem = true;
+        isFound = true;
       }
       console.log("Found items: ", found);
     }
@@ -98,7 +98,7 @@
     }
 
     service.checkFoundItems = function () {
-      return haveItem;
+      return isFound;
     }
   }
 })();

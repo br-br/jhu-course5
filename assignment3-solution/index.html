@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/styles.css">
   </head>
 <body>
-   <div class="container" ng-controller='NarrowItDownController as narrowList'>
+   <div class="container" ng-controller='NarrowItDownController as narrowSearch'>
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div class="form-group">
@@ -18,8 +18,8 @@
     </div>
 
     <!-- found-items should be implemented as a component -->
-    <found-items found="narrowList.found"
-                 on-remove="narrowList.removeItem(index)"></found-items>
+    <found-items found="narrowSearch.found"
+                 on-remove="narrowSearch.removeItem(index)"></found-items>
   </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
 <script src="app.js"></script>

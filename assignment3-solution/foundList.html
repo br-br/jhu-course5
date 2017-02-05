@@ -1,7 +1,7 @@
 <ul>
-  <li ng-repeat="item in narrowList.items">
+  <li ng-repeat="item in narrowSearch.items">
     {{ item.name }} ({{ item.short_name }}) :<br>&#9; {{ item.description }}
-    <button ng-click="narrowList.onRemove({index: $index});">Don't want this one!</button>
+    <button ng-click="narrowSearch.onRemove({index: $index});">Don't want this one!</button>
   </li>
 </ul>
-<div class="error" ng-hide="narrowList.checkFoundItems()">Nothing found</div>
+<div class="error" ng-hide="narrowSearch.checkFoundItems()">Nothing found</div>
