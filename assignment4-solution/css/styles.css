@@ -1,0 +1,15 @@
+body {
+  font-size: 1.2em;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+
+li[ui-sref]:hover {
+  list-style: none;
+  cursor: pointer;
+  color: red;
+}
