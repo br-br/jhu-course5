@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='MenuApp'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu App</title>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+  </head>
+
+  <body>
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li ui-sref-active="active" ui-sref="home" role="presentation"><a href="#">Home</a></li>
+                    <li ui-sref-active="active" ui-sref="categories" role="presentation"><a href="#">Categories</a></li>
+                </ul>
+            </nav>
+            <h1>Welcome to our Restaurant</h1>
+        </div>
+
+        <ui-view></ui-view>
+
+    </div>
+
+    <!-- Libraries -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="src/modules/menuapp.module.js"></script>
+    <script src="src/modules/menudata.module.js"></script>
+
+    <!-- Routes -->
+    <script src="src/routes.js"></script>
+
+    <!-- 'menuapp' and 'data' module artifacts -->
+    <script src="src/components/items.component.js"></script>
+    <script src="src/components/categories.component.js"></script>
+    <script src="src/services/menudata.service.js"></script>
+    <script src="src/controllers/items.controller.js"></script>
+    <script src="src/controllers/categories.controller.js"></script>
+
+    <!-- templates -->
+    <script src="src/templates/home.template.html"></script>
+    <script src="src/templates/categories.component.html"></script>
+    <script src="src/templates/categories.template.html"></script>
+    <script src="src/templates/items.component.html"></script>
+    <script src="src/templates/items.template.html"></script>
+  </body>
+</html>
