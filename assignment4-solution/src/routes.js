@@ -15,7 +15,7 @@
             .state('categories', {
                 url: '/categories',
                 templateUrl: 'src/templates/categories.template.html',
-                controller: 'categoriesController as categoriesCtrl',
+                controller: 'CategoriesController as categoriesCtrl',
                 resolve: {
                     categories: ['MenuDataService', function(MenuDataService) {
                         return MenuDataService.getAllCategories();
@@ -26,10 +26,6 @@
                 url: '/{categoryShortName}',
                 templateUrl: 'src/templates/items.template.html',
                 controller: 'itemsController as itemsCtrl',
-                params: {
-                    categoryShortName: null,
-                    categoryName: null
-                },
                 resolve: {
                     items: ['$stateParams', 'MenuDataService',
                     function($stateParams, MenuDataService) {
