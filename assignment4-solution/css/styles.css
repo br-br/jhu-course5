@@ -9,7 +9,7 @@ body {
 }
 h1 {
   font-family: 'Tangerine', serif;
-  font-size: 10rem;
+  font-size: 10em;
 }
 a {
   text-decoration: none;
@@ -34,7 +34,7 @@ a:hover {
   padding: 10px;
 }
 .title {
-  font-size: 1.8rem;
+  font-size: 1.8em;
   color: fuchsia;
 }
 .description {
