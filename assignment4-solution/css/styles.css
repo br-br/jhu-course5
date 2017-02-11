@@ -40,6 +40,9 @@ a:hover {
 .description {
   color: cornflowerblue;
 }
+.spinner {
+  text-align: center;
+}
 li {
   list-style: none;
 }

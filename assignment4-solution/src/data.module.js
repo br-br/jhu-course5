@@ -1,5 +1,5 @@
 (function () {
   'use strict';
 
-  angular.module('Data', [,'Spinner']);
+  angular.module('Data', []);
 })();
