@@ -13,7 +13,7 @@
         method: "GET",
         url: "https://davids-restaurant.herokuapp.com/categories.json"
       }).then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         return response.data;
       });
     }
@@ -23,8 +23,8 @@
         method: "GET",
         url: ('https://davids-restaurant.herokuapp.com/menu_items.json?category=' + categoryShortName)
       }).then(function (response) {
-        console.log("Item for category ", categoryShortName);
-        console.log(response.data.menu_items);
+        // console.log("Item for category ", categoryShortName);
+        // console.log(response.data.menu_items);
         return response.data.menu_items;
       })
     }
