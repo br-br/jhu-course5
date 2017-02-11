@@ -1,5 +1,12 @@
-<ul>
+<!-- <ul>
   <li ng-repeat="item in $ctrl.items">
-    {{ item.name }}
+    <div class="row">
+      <div class="col-sm-4">  {{ item.name }}</div>
+      <div class="col-sm-8">  {{ item.description }}</div>
+    </div>
   </li>
-</ul>
+</ul> -->
+<div class="row item" ng-repeat="item in $ctrl.items">
+  <div class="title">  {{ item.name }}</div>
+  <div class="description">  {{ item.description }}</div>
+</div>
