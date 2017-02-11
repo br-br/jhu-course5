@@ -49,11 +49,23 @@
        method: "GET",
        url:(ApiBasePath + "/categories.json")
 
+<<<<<<< HEAD
      }).then(function (response) {
        // console.log(response.data);
        return response.data;
      });
    }
+=======
+    service.getAllCategories = function () {
+      return $http({
+        method: "GET",
+        url:("https://davids-restaurant.herokuapp.com/categories.json")
+      }).then(function (response) {
+        // console.log(response.data);
+        return response.data;
+      });
+    }
+>>>>>>> c03319947c61daf381d98ed7bc99fb674b6c9fcd
 
    service.getItemsForCategory = function (categoryShortName) {
      return $http({
