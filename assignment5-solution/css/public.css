@@ -37,6 +37,25 @@
 }
 /* END HOME PAGE */
 
+/* sign up page */
+form[name="signupForm"] {
+  margin-bottom: 80px;
+}
+.has-error .help-block {
+    color: #ffff00 ;
+}
+.text-success {
+  padding: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: limegreen ;
+}
+.signup-h1 {
+  padding: 50px;
+  color: #f6b319;
+}
+/* end sign up page */
+
 /* MENU CATEGORIES PAGE */
 .category-tile {
   position: relative;
