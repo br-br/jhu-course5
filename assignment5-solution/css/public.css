@@ -39,7 +39,8 @@
 
 /* sign up page */
 form[name="signupForm"] {
-  margin-bottom: 80px;
+
+  margin: 40px 0 80px 0;
 }
 .has-error .help-block {
     color: #ffff00 ;
