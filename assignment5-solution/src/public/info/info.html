@@ -1,19 +1,24 @@
 <div class="container">
-    <div class="row">
+    <div class="row info">
         <div ng-show="infoCtrl.signedUp">
-            <h1>Your user profile information:</h1>
+            <h1>User Profile:</h1>
+            <hr>
             <p>First name: {{infoCtrl.user.firstName}}</p>
-            <p>Last name: {{infoCtrl.user.lastName}}</p>
-            <p>Email: {{infoCtrl.user.email}}</p>
-            <p>Phone: {{infoCtrl.user.phone}}</p>
-            <p>Your favorite dish is Menu number {{infoCtrl.user.favoriteDishDetails.short_name}}: {{infoCtrl.user.favoriteDishDetails.name}}</p>
+            <p>Last name:  {{infoCtrl.user.lastName}}</p>
+            <p>Email:      {{infoCtrl.user.email}}</p>
+            <p>Phone:      {{infoCtrl.user.phone}}</p>
+            <h2>Favorite Dish:</h2>
+            <img class="img-responsive img-favorite" ng-src="{{infoCtrl.apiPath}}/images/{{infoCtrl.user.favoriteDish}}.jpg" alt="{{infoCtrl.user.favoriteDishDetails.name}}" />
+            <h3>Menu number {{infoCtrl.user.favoriteDishDetails.short_name}}: {{infoCtrl.user.favoriteDishDetails.name}}</h3>
             <p>This dish contains {{infoCtrl.user.favoriteDishDetails.description}}.</p>
-            <img class="img-responsive" ng-src="{{infoCtrl.apiPath}}/images/{{infoCtrl.user.favoriteDish}}.jpg" alt="{{infoCtrl.user.favoriteDishDetails.name}}" />
+
+
 
         </div>
 
         <div ng-hide="infoCtrl.signedUp">
-            <h1>You need to signup first. <a class="btn btn-default" ui-sref="public.signup">Signup now!</a></h1>
+            <h2>You need to sign up first.</h2>
+            <h1><a class="btn btn-default" ui-sref="public.signup">Sign up now!</a></h1>
         </div>
     </div>
 </div>

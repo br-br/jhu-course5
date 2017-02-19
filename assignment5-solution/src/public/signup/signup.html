@@ -7,31 +7,31 @@
         <form class="form-vertical" name="signupForm" ng-submit="signupCtrl.signup(signupForm)" novalidate>
             <div class="form-group" ng-class="{'has-error': signupForm.firstName.$error.required && (!signupForm.firstName.$pristine || signupForm.$submitted)}">
                 <label for="firstName">First Name </label>
-                <input class="form-control" type="text" name="firstName" ng-model="signupCtrl.user.firstName" required />
+                <input class="form-control" type="text" placeholder="First Name"  name="firstName" ng-model="signupCtrl.user.firstName" required />
                 <span ng-show="signupForm.firstName.$error.required && (!signupForm.firstName.$pristine || signupForm.$submitted)" class="help-block">Please enter your first name.</span>
             </div>
             <div class="form-group" ng-class="{'has-error': signupForm.lastName.$error.required && (!signupForm.lastName.$pristine || signupForm.$submitted)}">
                 <label for="lastName">Last Name </label>
-                <input class="form-control" type="text" name="lastName" ng-model="signupCtrl.user.lastName" required />
+                <input class="form-control" type="text" placeholder="Last Name" name="lastName" ng-model="signupCtrl.user.lastName" required />
                 <span ng-show="signupForm.lastName.$error.required && (!signupForm.lastName.$pristine || signupForm.$submitted)" class="help-block">Please enter your last name.</span>
             </div>
             <div class="form-group" ng-class="{'has-error': (signupForm.email.$error.required && (!signupForm.email.$pristine || signupForm.$submitted)) || signupForm.email.$error.email }">
                 <label for="email">Email Address</label>
-                <input class="form-control" type="email" name="email" ng-model="signupCtrl.user.email" required />
+                <input class="form-control" type="email" placeholder="Email Address"  name="email" ng-model="signupCtrl.user.email" required />
                 <span ng-show="signupForm.email.$error.required && (!signupForm.email.$pristine || signupForm.$submitted)" class="help-block">Please enter your email address.</span>
                 <span ng-show="signupForm.email.$error.email" class="help-block">Please enter a valid email address.</span>
             </div>
             <div class="form-group" ng-class="{'has-error': (signupForm.phone.$error.required && (!signupForm.phone.$pristine || signupForm.$submitted)) || (signupForm.phone.$error.minlength || signupForm.phone.$error.maxlength)}">
                 <label for="phone">Phone Number </label>
-                <input class="form-control" type="number" name="phone" ng-model="signupCtrl.user.phone" ng-minlength="9" ng-maxlength="9" required />
+                <input class="form-control" type="number" placeholder="Phone Number (9 digits)" name="phone" ng-model="signupCtrl.user.phone" ng-minlength="9" ng-maxlength="9" required />
                 <span ng-show="signupForm.phone.$error.required && (!signupForm.phone.$pristine || signupForm.$submitted)" class="help-block">Please enter your phone number.</span>
                 <span ng-show="signupForm.phone.$error.minlength || signupForm.phone.$error.maxlength" class="help-block">Please enter a phone number that is 9 digits long.</span>
             </div>
             <div class="form-group" ng-class="{'has-error': signupCtrl.showError}">
                 <label for="favoriteDish">Favorite Dish</label>
-                <input class="form-control" type="text$filter('uppercase')()" name="favoriteDish" ng-text="text.toUpperCase()" ng-model="signupCtrl.user.favoriteDish"/>
+                <input class="form-control" type="text" placeholder="Favorite Dish (Menu Number)" name="favoriteDish" ng-text="text" ng-model="signupCtrl.user.favoriteDishRaw"/>
                 <span ng-show="signupCtrl.showError" class="help-block">No such menu number exists <br>
-                    Please enter a the menu number: Capital letter followed by a number</span>
+                    Please enter a menu number.</span>
             </div>
 
             <button type="submit" class="btn btn-default" ng-disabled="(signupForm.$invalid || (!signupCtrl.showError && signupForm.$submitted))" ng-submit="$ctrl.submit()" >

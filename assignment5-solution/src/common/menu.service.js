@@ -37,8 +37,9 @@
       });
     };
 
-    service.getFavoriteDish = function(short_name) {      
-      return $http.get(ApiPath + '/menu_items/' + short_name + '.json');
+    service.getFavoriteDish = function(short_name) {
+      var shortNameUpper = short_name.toUpperCase();
+      return $http.get(ApiPath + '/menu_items/' + shortNameUpper + '.json');
     }
 
   }

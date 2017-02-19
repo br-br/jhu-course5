@@ -57,6 +57,17 @@ form[name="signupForm"] {
 }
 /* end sign up page */
 
+/* info page */
+.info {
+  margin-bottom: 5rem;
+}
+.img-favorite {
+  float: left;
+  margin-right: 3rem;
+  border: 5px solid #557c3e;
+}
+/* end info page */
+
 /* MENU CATEGORIES PAGE */
 .category-tile {
   position: relative;
