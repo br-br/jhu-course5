@@ -5,20 +5,40 @@
 
     <div class="col-xs-10 col-sm-8 col-md-6">
         <form class="form-vertical" name="signupForm" ng-submit="signupCtrl.signup(signupForm)" novalidate>
-            <div class="form-group" ng-class="{'has-error': signupForm.firstName.$error.required && (!signupForm.firstName.$pristine || signupForm.$submitted)}" ng-minlength="2" ng-maxlength="15">
+            <div class="form-group" ng-class="{'has-error': (signupForm.firstName.$error.required && (!signupForm.firstName.$pristine || signupForm.$submitted)) ||
+            (signupForm.firstName.$error.minlength||signupForm.firstName.$error.maxlength)}">
                 <label for="firstName">First Name </label>
-                <input class="form-control" type="text" placeholder="First Name"  name="firstName" ng-model="signupCtrl.user.firstName" required />
+                <input class="form-control" type="text" placeholder="First Name"  name="firstName" ng-model="signupCtrl.user.firstName" required ng-minlength="2" ng-maxlength="15"/>
                 <span ng-show="signupForm.firstName.$error.required && (!signupForm.firstName.$pristine || signupForm.$submitted)" class="help-block">Please enter your first name.</span>
-                <span ng-show="signupForm.firstName.$error.minlength" class="help-block">First name should contain at least 2 letters.</span>
-                <span ng-show="signupForm.firstName.$error.maxlength" class="help-block">First name can only be 15 letters long.</span>
+                <span ng-show="signupForm.firstName.$error.minlength || signupForm.firstName.$error.maxlength" class="help-block">First name must be 2 to 15 letters long.</span>
             </div>
-            <div class="form-group" ng-class="{'has-error': signupForm.lastName.$error.required && (!signupForm.lastName.$pristine || signupForm.$submitted)}" ng-minlength="2" ng-maxlength="15">
+            <div class="form-group" ng-class="{'has-error': (signupForm.lastName.$error.required && (!signupForm.lastName.$pristine || signupForm.$submitted)) ||
+            (signupForm.lastName.$error.minlength||signupForm.lastName.$error.maxlength)}">
                 <label for="lastName">Last Name </label>
-                <input class="form-control" type="text" placeholder="Last Name" name="lastName" ng-model="signupCtrl.user.lastName" required />
+                <input class="form-control" type="text" placeholder="Last Name" name="lastName" ng-model="signupCtrl.user.lastName" required  ng-minlength="2" ng-maxlength="15"/>
                 <span ng-show="signupForm.lastName.$error.required && (!signupForm.lastName.$pristine || signupForm.$submitted)" class="help-block">Please enter your last name.</span>
-                <span ng-show="signupForm.firstName.$error.minlength" class="help-block">Last name should contain at least 2 letters.</span>
-                <span ng-show="signupForm.firstName.$error.maxlength" class="help-block">Last name can only be 15 letters long.</span>
+                <span ng-show="signupForm.lastName.$error.minlength || signupForm.lastName.$error.maxlength" class="help-block">Last name must be 2 to 15 letters long.</span>
             </div>
+
+
+            <!-- <div class="form-group">
+              <label for="firstName">First name</label>
+              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name" ng-model="$ctrl.user.firstName"
+               required minlength="2" ng-maxlength="16">
+              <span ng-if="regForm.firstName.$invalid && regForm.firstName.$touched">
+                First name must be between 2 and 16 characters
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last name</label>
+              <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last name"  ng-model="$ctrl.user.lastName"
+               required minlength="2" ng-maxlength="16">
+              <span ng-if="regForm.lastName.$invalid && regForm.lastName.$touched">
+                Last name must not between 2 and 16 characters
+              </span>
+            </div> -->
+
+
             <div class="form-group" ng-class="{'has-error': (signupForm.email.$error.required && (!signupForm.email.$pristine || signupForm.$submitted)) || signupForm.email.$error.email }">
                 <label for="email">Email Address</label>
                 <input class="form-control" type="email" placeholder="Email Address"  name="email" ng-model="signupCtrl.user.email" required />
